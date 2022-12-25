@@ -1,0 +1,39 @@
+% !TeX root = ../dokumentation.tex
+
+
+% Nummer des Inhaltes mit \setcounter{figure}{"`Number"'} (figure, lstlisting or table) ändern wenn nötig
+\ifliteratur
+    \ifliteraturteilen
+        \defbibfilter{websites}{
+            ( type=online or type=software )
+             and not keyword=int
+             and not keyword=img
+        }
+        \defbibnote{imgnote}{Sofern nicht anders angegeben sind die Bilder selbsterstellt.}
+        % Quellenverzeichnis nach Literatur und Weblinks trennen
+        %\printbibliography[heading=subbibintoc,title={Literatur},nottype=online]
+        %\printbibliography[heading=subbibintoc,title={Weblinks},type=online]
+    	\printbibheading[title=Sources,heading=bibnumbered]
+        \printbibliography[heading=subbibnumbered,title={Literature},nottype=online,nottype=software,notkeyword=int,notkeyword=img]
+        \printbibliography[heading=subbibnumbered,title={Internal Documents},keyword=int,notkeyword=img]
+        \printbibliography[heading=subbibnumbered,title={Websites},filter=websites]
+        \printbibliography[heading=subbibnumbered,title={Image Sources},keyword=img,prenote=imgnote]
+    \else
+        % Quellenverzeichnis nicht trennen
+        \printbibliography[heading=bibnumbered]
+    \fi
+\fi
+
+\label{endOfArabicNumbering}
+\clearpage
+\appendix
+\setpagestylefoot
+\renewcommand{\thefigure}{\Alph{chapter}.\arabic{figure}}
+\renewcommand\thelstlisting{\Alph{chapter}.\arabic{lstlisting}}
+\renewcommand\thetable{\Alph{chapter}.\arabic{table}}
+
+% \chapter{\langanhang}
+% Glossar
+\ifglossar
+    \printglossary[style=altlist,title=\langglossar]
+\fi

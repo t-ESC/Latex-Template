@@ -1,8 +1,8 @@
 additionalPackages
 chnglog.txt
 __latexindent_temp.tex
-dokumentation.pdf
-dokumentation-blx.bib
+template.pdf
+template-blx.bib
 *.for
 *.loe
 *.bak

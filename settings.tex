@@ -1,19 +1,104 @@
-\documentclass[
-    pdftex,
-    oneside,			% Einseitiger Druck.
-    12pt,				% Schriftgroesse
-    parskip=half,		% Halbe Zeile Abstand zwischen Absätzen.
-    %topmargin = 10pt,	% Abstand Seitenrand (Std:1in) zu Kopfzeile [laut log: unused]
-    headheight = 33pt,	% Höhe der Kopfzeile
-    %headsep = 30pt,	% Abstand zwischen Kopfzeile und Text Body  [laut log: unused]
-    headsepline,		% Linie nach Kopfzeile.
-    footsepline,		% Linie vor Fusszeile.
-    %footheight = 16pt,	% Höhe der Fusszeile
-    abstracton,		% Abstract Überschriften
-    DIV=calc,		% Satzspiegel berechnen
-    BCOR=8mm,		% Bindekorrektur links: 8mm
-    headinclude=false,	% Kopfzeile nicht in den Satzspiegel einbeziehen
-    footinclude=false,	% Fußzeile nicht in den Satzspiegel einbeziehen
-    listof=totoc,		% Abbildungs-/ Tabellenverzeichnis im Inhaltsverzeichnis darstellen
-    toc=bibliography,	% Literaturverzeichnis im Inhaltsverzeichnis darstellen
-]{scrarticle}	% Koma-Script report-Klasse, fuer laengere Bachelorarbeiten alternativ auch: scrbook
+% !TeX root = dokumentation.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                   Einstellungen
+%
+% Hier können alle relevanten Einstellungen für diese Arbeit gesetzt werden.
+% Dazu gehören Angaben u.a. über den Autor sowie Formatierungen.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Sprache %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Aktuell sind Deutsch und Englisch unterstützt.
+%% Es werden nicht nur alle vom Dokument erzeugten Texte in
+%% der entsprechenden Sprache angezeigt, sondern auch weitere
+%% Aspekte angepasst, wie z.B. die Anführungszeichen und
+%% Datumsformate.
+\setzesprache{de} % de oder en
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Angaben  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Die meisten der folgenden Daten werden auf dem
+%% Deckblatt angezeigt, einige auch im weiteren Verlauf
+%% des Dokuments.
+\setzemartrikelnr{-remove-}
+\setzekurs{-remove-}
+\setzetitel{-remove-}
+\setzedatumAnfang{-remove-}
+\setzedatumAbgabe{-remove-}
+\setzefirma{-remove-}
+\setzefirmenort{-remove-}
+\setzeabgabeort{-remove-}
+\setzeabschluss{-remove-}
+\setzestudiengang{-remove-}
+\setzedhbw{-remove-}
+\setzebetreuer{-remove-}
+\setzegutachter{-remove-}
+\setzezeitraum{-remove-}
+\setzearbeit{-remove-}
+\setzeautor{-remove-}
+\setzesemester{-remove-}
+\setzestudienrichtung{-remove-}
+\setzejahrgang{-remove-}
+\setzeabteilung{-remove-}
+\setzestandort{-remove-}
+
+\inhalttrue                 % auskommentieren oder ändern zu \inhaltfalse, falls kein Inhaltsverzeichnis eingefügt werden soll
+% \unterschriftenblatttrue    % auskommentieren oder ändern zu \unterschriftenblattfalse, falls kein Unterschriftenblatt eingefügt werden soll
+% \selbsterkltrue             % auskommentieren oder ändern zu \selbsterklfalse, wenn keine Selbstständigkeitserklärung benötigt wird
+% \sperrvermerktrue           % auskommentieren oder ändern zu \sperrvermerkfalse, wenn kein Sperrvermerk benötigt wird
+\abkverztrue                % auskommentieren oder ändern zu \abkverzfalse, wenn kein Abkürzungsverzeichnis benötigt wird
+% \abbverztrue                % auskommentieren oder ändern zu \abbverzfalse, wenn kein Abbildungsverzeichnis benötigt wird
+% \tableverztrue             % auskommentieren oder ändern zu \tableverzfalse, wenn kein Tabellenverzeichnis benötigt wird
+% \listverztrue               % auskommentieren oder ändern zu \listverzfalse, wenn kein Listingsverzeichnis benötigt wird
+% \formelverztrue             % auskommentieren oder ändern zu \formelverzfalse, wenn kein Formelverzeichnis benötigt wird
+% \formelgroeverztrue		% auskommentieren oder ändern zu \formelgroeverzfalse, wenn kein Formelgrößenverzeichnis benötigt wird
+\abstracttrue               % auskommentieren oder ändern zu \abstractfalse, wenn kein Abstract gewünscht ist
+\bothabstractstrue          % auskommentieren oder ändern zu \bothabstractsfalse, wenn nur der Abstract in der Hauptsprache eingefügt werden soll
+\appendixtrue               % auskommentieren oder ändern zu \appendixfalse, wenn kein Anhang gewünscht ist
+\literaturtrue              % auskommentieren oder ändern zu \literaturfalse, wenn kein Literaturverzeichnis gewünscht ist (\appendixtrue muss gesetzt sein!)
+% \literaturteilentrue        % ausommmentieren oder ändern zu \literaturteilenfalse, wenn Literaturverzeichnis nicht geteilt werden soll (\literaturtrue muss gesetzt sein!)
+                            % ändern der Teilung in ads/appendix
+% \glossartrue                % auskommentieren oder ändern zu \glossarfalse, wenn kein Glossar gewünscht ist (\appendixtrue muss gesetzt sein!)
+% \watermarktrue             % auskommentieren oder ändern zu \watermarktrue, wenn Wasserzeichen auf dem Titelblatt eingefügt werden soll
+
+\refWithPagesfalse          % ändern zu \refWithPagestrue, wenn die Seitenzahl bei Verweisen auf Kapitel engefügt werden sollen
+
+%\reviewertrue				% auskommentiren oder ändern zu \reviewerfalse wenn kein Gutachter gesetzt werden muss
+
+% Angabe des roten/gelben/grünen Punktes auf dem Titelblatt zur Kennzeichnung der Vertraulichkeitsstufe.
+% Mögliche Angaben sind \yellowdottrue, \reddottrue. Werden beide angegeben, wird der rote Punkt gezeichnet.
+% Wird keines der Kommandos angegeben, wird der grüner Punkt gezeichnet
+% \reddottrue
+% \yellowdottrue
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Literaturverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bei Fehlern während der Verarbeitung bitte in ads/header.tex bei der
+%% Einbindung des Pakets biblatex (ungefähr ab Zeile 110,
+%% einmal für jede Sprache), biber in bibtex ändern.
+\newcommand{\ladeliteratur}{%
+    \addbibresource{bibliographie.bib}
+}
+
+%% Zitierstil
+%% siehe: http://ctan.mirrorcatalogs.com/macros/latex/contrib/biblatex/doc/biblatex.pdf (3.3.1 Citation Styles)
+%% mögliche Werte z.B numeric-comp, alphabetic, authoryear
+\setzezitierstil{ieee}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Verschiedene Schriftarten
+% laut nag Warnung: palatino obsolete, use mathpazo, helvet (option scaled=.95), courier instead
+\setzeschriftart{lmodern} % palatino oder goudysans, lmodern, libertine
+
+%% Abstand vor Kapitelüberschriften zum oberen Seitenrand
+\setzekapitelabstand{20pt}
+
+%% Spaltenabstand
+\setzespaltenabstand{10pt}
+%%Zeilenabstand innerhalb einer Tabelle
+\setzezeilenabstand{1.5}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

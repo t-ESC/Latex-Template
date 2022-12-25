@@ -1,0 +1,52 @@
+%!TEX root = ../dokumentation.tex
+
+
+\newcommand{\deAbstractContent}{
+    % deutschen Abstract hier einfügen!
+    Test
+}
+
+\newcommand{\enAbstractContent}{
+    % englischen Abstract hier einfügen!
+    test
+}
+
+%%%%%%%% Ab hier nicht mehr anfassen! %%%%%%%%
+
+\newcommand{\deAbstract}{%
+    \renewcommand{\abstractname}{\langabstract} % Text für Überschrift
+    \begin{abstract}
+        \thispagestyle{plain}
+        \deAbstractContent
+    \end{abstract}
+}
+
+\newcommand{\enAbstract}{
+    \renewcommand{\abstractname}{\langabstract} % Text für Überschrift
+    \begin{abstract}
+        \thispagestyle{plain}
+        \enAbstractContent
+    \end{abstract}
+}
+
+\deAbstract
+\enAbstract
+
+% \iflang{de}{
+%     \deAbstract
+%     \ifbothabstracts
+%         \clearpage
+%         \begin{otherlanguage}{english}
+%             \enAbstract
+%         \end{otherlanguage}
+%     \fi
+% }
+
+% \iflang{en}{
+%     \enAbstract
+%     \ifbothabstracts
+%         \clearpage
+%         \begin{otherlanguage}{ngerman}
+%             \deAbstract
+%         \end{otherlanguage}
+%     \fi

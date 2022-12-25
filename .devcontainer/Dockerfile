@@ -8,9 +8,9 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends texlive-latex-base \
                                                     texlive-latex-extra \
-    #                                               texlive-fonts-recommended \
-    #                                               texlive-bibtex-extra \
-    #                                               lmodern \
-    #                                               texlive-lang-german \
-    #                                               texlive-plain-generic \
+                                                    texlive-fonts-recommended \
+                                                    texlive-bibtex-extra \
+                                                    lmodern \
+                                                    texlive-lang-german \
+                                                    texlive-plain-generic \
     && apt-get -y install --no-install-recommends git

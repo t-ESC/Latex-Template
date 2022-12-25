@@ -1,0 +1,88 @@
+%%%%%% Additional settings %%%%%%
+
+% Hurenkinder und Schusterjungen verhindern
+% http://projekte.dante.de/DanteFAQ/Silbentrennung
+\clubpenalty = 10000 % schließt Schusterjungen aus (Seitenumbruch nach der ersten Zeile eines neuen Absatzes)
+\widowpenalty = 10000 % schließt Hurenkinder aus (die letzte Zeile eines Absatzes steht auf einer neuen Seite)
+\displaywidowpenalty=10000
+
+\setcounter{biburlnumpenalty}{100}
+\setcounter{biburlucpenalty}{100}
+\setcounter{biburllcpenalty}{100}
+
+% Bildpfad
+\graphicspath{{images/}}
+
+% Einige häufig verwendete Sprachen
+\lstloadlanguages{PHP, Python, Java, C, C++, bash}
+\listingsettings{}
+% Umbennung des Listings
+\renewcommand\lstlistingname{\langlistingname}
+\renewcommand\lstlistlistingname{\langlistlistingname}
+\def\lstlistingautorefname{\langlistingautorefname}
+
+% Abstände in Tabellen
+\setlength{\tabcolsep}{\spaltenabstand}
+\renewcommand{\arraystretch}{\zeilenabstand}
+
+\usepackage{xspace}
+\newcommand{\lastcontentpage}{}
+\usepackage{amsfonts}
+
+\usetikzlibrary{shapes,arrows,calc,positioning}
+\input{ads/customTikZStyles.tex}
+
+\usepackage{relsize}
+
+\usepackage{censor}
+
+\usepackage{eso-pic}
+
+\usepackage{adjustbox}
+
+%% Paket um Textteile drehen zu können
+% \usepackage{rotating}
+%% Paket um Seite im Querformat anzuzeigen
+%\usepackage{lscape}
+
+\newcommand\Watermark{%
+    \put(0,0){%
+        \parbox[b][\paperheight]{\paperwidth}{%
+            \vfill
+            \includepdf[scale=0.8,angle=50,pages={1},pagecommand={}]{ads/watermark}
+            \vfill
+        }
+    }
+}
+
+\ifrefWithPages
+    %RJG8FE: add a pageref to autoref whenever the referenced page is not the same as the current one
+    %        useful for printed documents without clickable hyperlinks
+    \AtBeginDocument{\let\oldautoref\autoref}
+    \AtBeginDocument{
+        \renewcommand{\autoref}[1]{%
+            \oldautoref{#1}%
+            \ifthenelse{\thepage=\pageref{#1}}% if current page number equals the referenced page number
+            {}% then add nothing
+            { (S. \pageref{#1})}% else add the text
+        }
+    }
+\fi
+
+\usepackage{amssymb} % Erweiterung der Symbole in Mathematikumgebung
+
+\iflang{de}{\usepackage{icomma}} % Europäsiches Komma in Formeln
+
+\usepackage{tabularx}
+\usepackage{tabulary}
+
+%%%%%% Custom Enviroments %%%%%%
+\newenvironment{conditions}[1][\formelbeschreibung]
+  {%
+      #1\tabularx{\textwidth-\widthof{#1}}[t]{
+      >{$}l<{$}  @{} >{${}}c<{{}$} @{} X@{}
+      }%
+  }
+  {\endtabularx\\[\belowdisplayskip]}
+%%%%%% Custom Commands %%%%%%
+\newrobustcmd*{\citecompleteauthor}{\AtNextCite{\DeclareNameAlias{labelname}{given-family}}\citeauthor}

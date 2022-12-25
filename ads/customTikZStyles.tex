@@ -1,0 +1,54 @@
+% !TeX root = ../dokumentation.tex
+
+%% Some custom TikZ Styles for common UML Elements
+%% This could be used instead of TikZ-UML
+
+\tikzstyle{transition} = [%
+    thin,
+    -angle 45,
+    rounded corners
+]
+
+\tikzstyle{rect} = [%
+    draw,
+    rounded corners,
+]
+
+\tikzstyle{singlestate} = [%
+    draw,
+    rounded corners,
+    execute at begin node={\begin{varwidth}{10em}}, % Maximum Width
+    execute at end node={\end{varwidth}},
+    minimum width=10em                              % Minimum Width
+]
+
+\tikzstyle{synchronize} = [%
+    draw,
+    fill=black,
+    minimum width=3cm
+]
+
+\tikzstyle{decision} = [%
+    draw,
+    diamond,
+    minimum height=0.5cm,
+    aspect=1
+]
+
+\tikzstyle{tnode} = [%
+    font=\footnotesize
+]
+
+\tikzstyle{start} = [%
+    circle,
+    draw,
+    fill=black
+]
+
+\tikzstyle{final} = [%
+    circle,
+    double,
+    fill=black,
+    double distance=0.1cm,
+    draw
+]
