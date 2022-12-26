@@ -16,3 +16,4 @@ rm *.toc
 rm *.tps
 rm *.run.xml
 rm *.synctex.gz
+rm template-blx.bib

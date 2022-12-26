@@ -1,13 +1,14 @@
-%!TEX root = ../dokumentation.tex
+%!TEX root = ../template.tex
+\WarningsOff[latex]
 
 \begin{titlepage}
 	\begin{longtable}{p{8.2cm} p{5.4cm}}
-	  {
-		  \raisebox{\ht\strutbox-\totalheight}{
-			% trim=left bottom right top
-			\includegraphics[width=7cm,trim=1.3cm 0 -1.3cm -0.5cm]{companylogo.png}
-		  }
-	  } &
+	%   {
+	% 	  \raisebox{\ht\strutbox-\totalheight}{
+	% 		% trim=left bottom right top
+	% 		\includegraphics[width=7cm,trim=1.3cm 0 -1.3cm -0.5cm]{companylogo.png}
+	% 	  }
+	%   } &
 	  {
 		  \raisebox{\ht\strutbox-\totalheight}{
 			  \iflang{de}{\includegraphics[height=2.5cm]{dhbw_de}}
@@ -15,46 +16,46 @@
 		  }
 	  }
 	\end{longtable}
-  
-	  \enlargethispage{20mm}
-	  \begin{center}
-		  \begin{doublespace}
-			  \vspace*{12mm}	{\LARGE\textbf \titel }\\
-			  \vspace*{5mm}
-		  \end{doublespace}
-		  
-		  \begin{tikzpicture}		
-			  \ifreddot
-				  \tikz\draw[fill=red,draw=red](-4,2) circle (1.4cm);
-			  \else
-				  \ifyellowdot
-					  \tikz\draw[fill=yellow,draw=yellow](-4,2) circle (1.4cm);
-				  \else
-					  \tikz\draw[fill=green,draw=green](-4,2) circle (1.4cm);
-				  \fi
-			  \fi
-		  \end{tikzpicture}
-		  \vspace{-1.4cm}
-		  \\
-  
-		  \vspace*{12mm}	{\large\textbf \arbeit }\\
-	  
-	  %	\vspace*{12mm}	\langdeckblattabschlusshinleitung\\
-		  \vspace*{3mm}		{\textbf \abschluss}\\
-		  \vspace*{12mm}	\langartikelstudiengang{} \langstudiengang{} \studiengang\\
-	  \vspace*{3mm}		\langanderdh{} \dhbw\\
-		  \vspace*{12mm}	\datumAbgabe\\
-	  \end{center}
-	  \vfill
-	  \begin{spacing}{1.2}
-	  \begin{tabbing}
-		  mmmmmmmmmmmmmmmmmmmmmmmmmm             \= \kill
-		  \textbf{\langvon}                  \>  \autor\\
-		  \textbf{\langdbbearbeitungszeit}       \>  \zeitraum\\
-		  \textbf{\langdbmatriknr, \langdbkurs}  \>  \martrikelnr, \kurs\\
-		  \ifreviewer
-			  \textbf{\langdbgutachter}              \>  \gutachter\\
-		  \fi
-	  \end{tabbing}
-	  \end{spacing}
-  \end{titlepage}
+
+	\enlargethispage{20mm}
+	\begin{center}
+		\begin{doublespace}
+			\vspace*{12mm}	{\LARGE\textbf \titel }\\
+			\vspace*{5mm}
+		\end{doublespace}
+		
+		\begin{tikzpicture}		
+			\ifreddot
+				\tikz\draw[fill=red,draw=red](-4,2) circle (1.4cm);
+			\else
+				\ifyellowdot
+					\tikz\draw[fill=yellow,draw=yellow](-4,2) circle (1.4cm);
+				\else
+					\tikz\draw[fill=green,draw=green](-4,2) circle (1.4cm);
+				\fi
+			\fi
+		\end{tikzpicture}
+		\vspace{-1.4cm}
+		\\
+
+		\vspace*{12mm}	{\large\textbf \arbeit }\\
+	
+		\vspace*{3mm}		{\textbf \abschluss}\\
+		\vspace*{12mm}	\langartikelstudiengang{} \langstudiengang{} \studiengang\\
+	\vspace*{3mm}		\langanderdh{} \dhbw\\
+		\vspace*{12mm}	\datumAbgabe\\
+	\end{center}
+	\vfill
+	\begin{spacing}{1.2}
+	\begin{tabbing}
+		mmmmmmmmmmmmmmmmmmmmmmmmmm             \= \kill
+		\textbf{\langvon}                  \>  \autor\\
+		\textbf{\langdbbearbeitungszeit}       \>  \zeitraum\\
+		\textbf{\langdbmatriknr, \langdbkurs}  \>  \martrikelnr, \kurs\\
+		\ifreviewer
+			\textbf{\langdbgutachter}              \>  \gutachter\\
+		\fi
+	\end{tabbing}
+	\end{spacing}
+\end{titlepage}
+\WarningsOn[latex]

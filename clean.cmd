@@ -15,3 +15,4 @@ del *.toc
 del *.tps
 del *.run.xml
 del *.synctex.gz
+del template-blx.bib
